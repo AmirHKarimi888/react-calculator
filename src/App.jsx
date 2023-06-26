@@ -93,6 +93,13 @@ function App() {
       setNum(Num);
     }
   }
+
+  const point = () => {
+    if(!Num.toString().includes(".")) {
+      Num = Num + ".";
+      setNum(Num);
+    }
+  }
   return (
     <>
       <div className="card">
@@ -117,7 +124,7 @@ function App() {
             <button>-</button>
             <br />
             <button onClick={() => zero()}>0</button>
-            <button>.</button>
+            <button onClick={ () => point() }>.</button>
             <button>=</button>
             <button>+</button>
           </div>
