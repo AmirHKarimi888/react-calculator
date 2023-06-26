@@ -37,6 +37,25 @@
   padding: 2em;
 }
 
+.input {
+  width: 404px;
+  height: 72px;
+  margin-bottom: 9px;
+  border-radius: 6px;
+  border: 0px;
+  font-size: 170%;
+}
+
+.input:hover {
+  filter: drop-shadow(0 0 1px #61dafbaa);
+}
+
+.buttons button {
+  width: 100px;
+  height: 100px;
+  margin: 1px;
+}
+
 .read-the-docs {
   color: #888;
 }
