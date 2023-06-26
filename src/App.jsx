@@ -1,34 +1,122 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
 
+  let [Num, setNum] = useState(0);
+  const [firstNum, setFirstNum] = useState();
+
+  const one = () => {
+    if (Num === 0) {
+      Num = '';
+    }
+
+    Num = Num + "1";
+    setNum(Num);
+  }
+
+  const two = () => {
+    if (Num === 0) {
+      Num = '';
+    }
+
+    Num = Num + "2";
+    setNum(Num);
+  }
+
+  const three = () => {
+    if (Num === 0) {
+      Num = '';
+    }
+
+    Num = Num + "3";
+    setNum(Num);
+  }
+
+  const four = () => {
+    if (Num === 0) {
+      Num = '';
+    }
+
+    Num = Num + "4";
+    setNum(Num);
+  }
+
+  const five = () => {
+    if (Num === 0) {
+      Num = '';
+    }
+
+    Num = Num + "5";
+    setNum(Num);
+  }
+
+  const six = () => {
+    if (Num === 0) {
+      Num = '';
+    }
+
+    Num = Num + "6";
+    setNum(Num);
+  }
+
+  const seven = () => {
+    if (Num === 0) {
+      Num = '';
+    }
+
+    Num = Num + "7";
+    setNum(Num);
+  }
+
+  const eight = () => {
+    if (Num === 0) {
+      Num = '';
+    }
+
+    Num = Num + "8";
+    setNum(Num);
+  }
+
+  const nine = () => {
+    if (Num === 0) {
+      Num = '';
+    }
+
+    Num = Num + "9";
+    setNum(Num);
+  }
+
+  const zero = () => {
+    if (Num !== 0) {
+      Num = Num + "0";
+      setNum(Num);
+    }
+  }
   return (
     <>
       <div className="card">
         <div className="calculator">
           <div className='input'>
-            <input type="text" className='input' />
+            <input type="text" className='input' onChange={event => setNum(event.target.value)} value={Num} />
           </div>
           <div className="buttons">
-            <button>7</button>
-            <button>8</button>
-            <button>9</button>
+            <button onClick={() => seven()}>7</button>
+            <button onClick={() => eight()}>8</button>
+            <button onClick={() => nine()}>9</button>
             <button>/</button>
             <br />
-            <button>4</button>
-            <button>5</button>
-            <button>6</button>
+            <button onClick={() => four()}>4</button>
+            <button onClick={() => five()}>5</button>
+            <button onClick={() => six()}>6</button>
             <button>*</button>
             <br />
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
+            <button onClick={() => one()}>1</button>
+            <button onClick={() => two()}>2</button>
+            <button onClick={() => three()}>3</button>
             <button>-</button>
             <br />
-            <button>0</button>
+            <button onClick={() => zero()}>0</button>
             <button>.</button>
             <button>=</button>
             <button>+</button>
