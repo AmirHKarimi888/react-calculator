@@ -4,7 +4,8 @@ import './App.css'
 function App() {
 
   let [Num, setNum] = useState(0);
-  const [secondNum, setsecondNum] = useState(0);
+  const [firstNum, setFirstNum] = useState(0);
+  const [operation, setOperation] = useState('');
 
   const one = () => {
     if (Num === 0) {
@@ -113,14 +114,69 @@ function App() {
 
 
   const root = () => {
-    Num = parseInt(Num.toString());
+    Num = parseFloat(Num.toString());
     Num = Math.sqrt(Num);
     setNum(Num);
   }
 
   const power = () => {
-    Num = parseInt(Num.toString());
+    setOperation('pow');
+    setFirstNum(parseFloat(Num.toString()));
+    Num = 0;
+    setNum(Num);
+  }
 
+  const division = () => {
+    setOperation('div');
+    setFirstNum(parseFloat(Num.toString()));
+    Num = 0;
+    setNum(Num);
+  }
+
+  const multipication = () => {
+    setOperation('mul');
+    setFirstNum(parseFloat(Num.toString()));
+    Num = 0;
+    setNum(Num);
+  }
+
+  const addition = () => {
+    setOperation('add');
+    setFirstNum(parseFloat(Num.toString()));
+    Num = 0;
+    setNum(Num);
+  }
+
+  const subtraction = () => {
+    setOperation('sub');
+    setFirstNum(parseFloat(Num.toString()));
+    Num = 0;
+    setNum(Num);
+  }
+
+  const equal = () => {
+
+    if(operation === "pow") {
+      Num = Math.pow(firstNum, parseFloat(Num.toString()));
+      setNum(Num);
+      setFirstNum(0);
+    } else if(operation === "div") {
+      Num = firstNum / parseFloat(Num.toString());
+      setNum(Num);
+      setFirstNum(0);
+    } else if(operation === "mul") {
+      Num = firstNum * parseFloat(Num.toString());
+      setNum(Num);
+      setFirstNum(0);
+    } else if(operation === "add") {
+      Num = firstNum + parseFloat(Num.toString());
+      setNum(Num);
+      setFirstNum(0);
+    } else if(operation === "sub") {
+      Num = firstNum - parseFloat(Num.toString());
+      setNum(Num);
+      setFirstNum(0);
+    }
   }
   return (
     <>
@@ -138,22 +194,22 @@ function App() {
             <button onClick={() => seven()}>7</button>
             <button onClick={() => eight()}>8</button>
             <button onClick={() => nine()}>9</button>
-            <button className='opBtn'>÷</button>
+            <button onClick={() => division()} className='opBtn'>÷</button>
             <br />
             <button onClick={() => four()}>4</button>
             <button onClick={() => five()}>5</button>
             <button onClick={() => six()}>6</button>
-            <button className='opBtn'>×</button>
+            <button onClick={() => multipication()} className='opBtn'>×</button>
             <br />
             <button onClick={() => one()}>1</button>
             <button onClick={() => two()}>2</button>
             <button onClick={() => three()}>3</button>
-            <button className='opBtn'>−</button>
+            <button onClick={() => subtraction()} className='opBtn'>−</button>
             <br />
             <button onClick={() => zero()}>0</button>
-            <button onClick={ () => point() }>.</button>
-            <button className='opBtn'>=</button>
-            <button className='opBtn'>+</button>
+            <button onClick={() => point() }>.</button>
+            <button onClick={() => equal()} className='opBtn'>=</button>
+            <button onClick={() => addition()} className='opBtn'>+</button>
           </div>
         </div>
       </div>
