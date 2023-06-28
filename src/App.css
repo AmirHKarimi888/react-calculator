@@ -56,6 +56,22 @@
   margin: 1px;
 }
 
+.buttons button:not(.delBtn, .opBtn):hover {
+  border-color: #646cff;
+}
+
+.buttons .delBtn {
+  color: crimson;
+}
+
+.buttons .opBtn:hover {
+  filter: drop-shadow(0 0 1px rgb(30, 245, 2));
+}
+
+.buttons .delBtn:hover {
+  filter: drop-shadow(0 0 1px crimson);
+}
+
 .read-the-docs {
   color: #888;
 }
